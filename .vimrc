@@ -39,16 +39,20 @@ set guifont=Monospace\ 9
 
 " ------------------ MBE ---------------
 
-:map <c-Tab> :bn<CR>
-:map <c-s-Tab> :bp<CR>
-:map <c-d> :MBEbd<CR>
+nmap <c-Tab> :bn<CR>
+nmap <c-S-Tab> :bp<CR>
+nmap <c-d> :MBEbd<CR>
 
+" ----------------- Global -------------
+set noswapfile
+colorscheme summerZorg
+nmap <c-A-u> :vimgrep <c-r><c-w>  **/*.go<CR> :cw<CR>
 
-:nmap <c-s> :w<CR>
-:nmap <c-S-Up> :res +5<CR>
-:nmap <c-S-Down> :res -5<CR>
-:nmap <c-S-Left> :vertical resize -5<CR>
-:nmap <c-S-Right> :vertical resize +5<CR>
+nmap <c-s> :w<CR>
+nmap <c-S-Up> :res +5<CR>
+nmap <c-S-Down> :res -5<CR>
+nmap <c-S-Left> :vertical resize -5<CR>
+nmap <c-S-Right> :vertical resize +5<CR>
 
 " ----------------  NERDTree ------------
 "
