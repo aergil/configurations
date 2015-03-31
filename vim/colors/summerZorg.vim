@@ -234,7 +234,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     " }}}
 
     " Global
-    call <SID>X("Normal", "333333", "ffffff", "")
+    call <SID>X("Normal", "333333", "fafafa", "")
     " call <SID>X("NonText", "438ec3", "b7dce8", "")
 
     " Search
@@ -256,13 +256,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     " Specials
     call <SID>X("Todo", "e50808", "dbf3cd", "bold")
     call <SID>X("Title", "000000", "", "")
-    call <SID>X("Special", "fd8900", "", "")
+    call <SID>X("Special", "D68528", "", "")
 
     " Syntax Elements
-    call <SID>X("String", "0086d2", "", "")
-    call <SID>X("Constant", "0086d2", "", "")
+    call <SID>X("String", "09B7B4", "", "")
+    call <SID>X("Constant", "B0A200", "", "")
     call <SID>X("Number", "0086f7", "", "")
-    call <SID>X("Statement", "fb660a", "", "")
+    call <SID>X("Statement", "D68528", "", "")
     call <SID>X("Function", "ff0086", "", "")
     call <SID>X("PreProc", "ff0007", "", "")
     call <SID>X("Comment", "22a21f", "", "")
