@@ -33,9 +33,12 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-" ------------------ Base mapping ------
+" ------------------ Base configuration ------
 
 set guifont=Monospace\ 9
+set guioptions -=m 
+set guioptions -=T
+set tabstop=4
 
 " ------------------ MBE ---------------
 
@@ -65,6 +68,7 @@ let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+let g:go_oracle_include_tests = 1
 
 let mapleader = ","
 
