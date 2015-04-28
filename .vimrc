@@ -11,13 +11,13 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+"Plugin 'junegunn/fzf'
 Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'Raimondi/delimitMate'
 Plugin 'fholgado/minibufexpl.vim'
-Plugin 'vim-scripts/summerfruit256.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,10 +36,10 @@ filetype plugin indent on    " required
 " ------------------ Base configuration ------
 
 set guifont=Monospace\ 9
-set guioptions -=m 
-set guioptions -=T
-set tabstop=4
-
+ set guioptions -=m 
+ set guioptions -=T
+set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab 
+syntax on
 " ------------------ MBE ---------------
 
 nmap <c-Tab> :bn<CR>
