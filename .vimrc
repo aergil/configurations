@@ -18,6 +18,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'Raimondi/delimitMate'
 Plugin 'fholgado/minibufexpl.vim'
+Plugin 'vim-scripts/logstash.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -52,6 +53,7 @@ colorscheme summerZorg
 nmap <c-A-u> :vimgrep <c-r><c-w>  **/*.go<CR> :cw<CR>
 
 nmap <c-s> :w<CR>
+map <c-S-s> mzgg=G`z
 nmap <c-S-Up> :res +5<CR>
 nmap <c-S-Down> :res -5<CR>
 nmap <c-S-Left> :vertical resize -5<CR>
