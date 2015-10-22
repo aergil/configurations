@@ -37,8 +37,8 @@ filetype plugin indent on    " required
 " ------------------ Base configuration ------
 
 set guifont=Monospace\ 9
- set guioptions -=m 
- set guioptions -=T
+set guioptions -=m 
+set guioptions -=T
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab 
 syntax on
 " ------------------ MBE ---------------
@@ -53,7 +53,7 @@ colorscheme summerZorg
 nmap <c-A-u> :vimgrep <c-r><c-w>  **/*.go<CR> :cw<CR>
 
 nmap <c-s> :w<CR>
-map <c-S-s> mzgg=G`z
+nmap <F7> mzgg=G`z :w<CR>
 nmap <c-S-Up> :res +5<CR>
 nmap <c-S-Down> :res -5<CR>
 nmap <c-S-Left> :vertical resize -5<CR>
@@ -65,6 +65,7 @@ nmap ,n :NERDTreeFind<CR>
 nmap ,m :NERDTreeToggle<CR>
 
 " ------------------ GO -----------------
+set rtp+=/home/tgavard/workspace/golang/src/github.com/golang/lint/misc/vim
 
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
