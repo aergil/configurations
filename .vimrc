@@ -11,14 +11,12 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
-"Plugin 'junegunn/fzf'
 Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'
-Plugin 'Raimondi/delimitMate'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'vim-scripts/logstash.vim'
+Plugin 'majutsushi/tagbar'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -46,7 +44,9 @@ syntax on
 nmap <c-Tab> :bn<CR>
 nmap <c-S-Tab> :bp<CR>
 nmap <c-d> :MBEbd<CR>
-
+" ---------------- vim-compiler-go -----
+" let g:golang_goroot = "/usr/local/go" 
+" autocmd FileType go compiler golang
 " ----------------- Global -------------
 set noswapfile
 colorscheme summerZorg
@@ -64,6 +64,13 @@ nmap <c-S-Right> :vertical resize +5<CR>
 nmap ,n :NERDTreeFind<CR>
 nmap ,m :NERDTreeToggle<CR>
 
+" Make sure that when NT root is changed, Vim's pwd is also updated
+let NERDTreeChDirMode = 2
+let NERDTreeShowLineNumbers = 1
+let NERDTreeAutoCenter = 1
+
+" Open NERDTree on startup, when no file has been specified
+autocmd VimEnter * if !argc() | NERDTree | endif
 " ------------------ GO -----------------
 set rtp+=/home/tgavard/workspace/golang/src/github.com/golang/lint/misc/vim
 
@@ -106,4 +113,32 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 "More <Plug> mappings can be seen with :he go-mappings. Also these are just recommendations, you are free to create more advanced mappings or functions based on :he go-commands.
 "
 
-
+" ------------------ Tagbag -----------------
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_type_go = {  
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
